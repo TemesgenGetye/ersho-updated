@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ersho Events - Event Organizer Website
+
+A modern event organizer website built with Next.js, Tailwind CSS, and Supabase. Features include event management, user image submissions with admin approval, and a clean, responsive design using white, black, and brown color scheme.
+
+## Features
+
+- **Event Management**: Organizers can create and manage events
+- **Image Gallery**: Users can submit photos from events for admin approval
+- **Admin Dashboard**: Simple admin panel for managing events and approving images
+- **User Authentication**: Secure sign-up and sign-in system
+- **Responsive Design**: Mobile-friendly interface
+- **Modern UI**: Clean design with white, black, and brown color scheme
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS
+- **Backend**: Supabase (Database, Authentication, Storage)
+- **Icons**: Lucide React
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- pnpm (or npm/yarn)
+- Supabase account
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd ersho-events
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Set up Supabase:
+   - Create a new Supabase project
+   - Copy your project URL and anon key
+   - Create a `.env.local` file in the root directory:
 
-## Learn More
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Set up the database:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Go to your Supabase dashboard
+   - Navigate to the SQL Editor
+   - Run the SQL commands from `supabase-schema.sql`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Run the development server:
 
-## Deploy on Vercel
+```bash
+pnpm dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Database Schema
+
+The application uses the following main tables:
+
+- **events**: Stores event information
+- **event_images**: Stores user-submitted images with approval status
+- **profiles**: Stores user profile information and roles
+
+## User Roles
+
+- **User**: Can view events, submit images, and manage their profile
+- **Admin**: Can manage events, approve/reject images, and access admin dashboard
+
+## Key Features
+
+### Event Management
+
+- View upcoming events on the homepage
+- Admin can create, edit, and delete events
+- Event details include title, description, date, location, and images
+
+### Image Gallery
+
+- Users can upload photos from events
+- Images require admin approval before going live
+- Approved images are displayed in the public gallery
+- Admin can approve or reject submitted images
+
+### Admin Dashboard
+
+- Overview of events and image statistics
+- Manage events (create, edit, delete)
+- Review and approve/reject user-submitted images
+- Simple and intuitive interface
+
+## File Structure
+
+```
+src/
+├── app/
+│   ├── auth/
+│   │   ├── signin/
+│   │   └── signup/
+│   ├── admin/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── EventsSection.tsx
+│   ├── GallerySection.tsx
+│   ├── AboutSection.tsx
+│   ├── TestimonialsSection.tsx
+│   └── NewsletterSection.tsx
+├── contexts/
+│   └── AuthContext.tsx
+└── lib/
+    ├── supabase.ts
+    └── supabase-server.ts
+```
+
+## Deployment
+
+1. Build the application:
+
+```bash
+pnpm build
+```
+
+2. Deploy to your preferred platform (Vercel, Netlify, etc.)
+
+3. Make sure to set the environment variables in your deployment platform.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
