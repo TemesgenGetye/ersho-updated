@@ -10,7 +10,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-slate-800 border-t border-gray-200">
+    <footer className="bg-[color:var(--accent-200)] text-slate-800 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -26,19 +26,19 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-slate-700 transition-colors"
+                className="text-slate-600 hover:accent-text transition-colors"
               >
                 <Facebook className="h-6 w-6" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-slate-700 transition-colors"
+                className="text-slate-600 hover:accent-text transition-colors"
               >
                 <Instagram className="h-6 w-6" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-slate-700 transition-colors"
+                className="text-slate-600 hover:accent-text transition-colors"
               >
                 <Twitter className="h-6 w-6" />
               </a>
@@ -62,7 +62,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/events"
-                  className="text-gray-300 hover:text-amber-400 transition-colors"
+                  className="text-slate-600 hover:accent-text transition-colors"
                 >
                   Events
                 </Link>

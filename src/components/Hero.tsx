@@ -10,8 +10,19 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-2">
-            <div className="relative w-full max-w-2xl aspect-square rounded-xl">
-              <LetterVideoMosaic />
+            <div className="w-full max-w-2xl">
+              <div className="text-center mb-4">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900">
+                  Create Unforgettable Moments
+                </h1>
+                <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+                  We plan, design, and execute events that leave a lasting
+                  impression.
+                </p>
+              </div>
+              <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                <LetterVideoMosaic />
+              </div>
             </div>
             <div className="text-center -mt-4">
               <span className="block text-5xl sm:text-4xl lg:text-5xl font-bold tracking-wide text-amber-900">

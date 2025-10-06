@@ -54,7 +54,7 @@ export default function EventsPage() {
       <Header />
 
       <main className="pt-16">
-        <div className="bg-gradient-to-br from-amber-50 to-white py-16">
+        <div className="bg-gradient-to-br linear-gradient(135deg, rgba(165,139,120,0.04), #ffffff">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Link

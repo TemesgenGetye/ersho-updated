@@ -84,7 +84,13 @@ export default function EventsSection() {
                 key={event.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="h-48 bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center">
+                <div
+                  className="h-48 flex items-center justify-center"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, var(--accent-200), rgba(233,223,219,0.8))",
+                  }}
+                >
                   {event.image_url ? (
                     <img
                       src={event.image_url}
@@ -92,7 +98,7 @@ export default function EventsSection() {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <Calendar className="h-16 w-16 text-amber-600" />
+                    <Calendar className="h-16 w-16 text-[var(--accent-700)]" />
                   )}
                 </div>
                 <div className="p-6">
@@ -116,7 +122,7 @@ export default function EventsSection() {
 
                   <Link
                     href={`/events/${event.id}`}
-                    className="inline-flex items-center text-amber-800 hover:text-amber-700 font-medium"
+                    className="inline-flex items-center accent-text hover:text-[var(--accent-700)] font-medium"
                   >
                     Learn More
                     <svg
@@ -152,7 +158,7 @@ export default function EventsSection() {
         <div className="text-center mt-12">
           <Link
             href="/events"
-            className="inline-flex items-center bg-amber-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+            className="inline-flex items-center px-8 py-3 rounded-lg font-semibold transition-colors accent-btn"
           >
             View All Events
             <svg

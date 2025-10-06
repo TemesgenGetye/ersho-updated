@@ -50,11 +50,16 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div
+      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+      style={{
+        background: "linear-gradient(135deg, rgba(165,139,120,0.04), #ffffff)",
+      }}
+    >
       <div className="max-w-md w-full space-y-8">
         <div>
           <Link href="/" className="flex justify-center">
-            <span className="text-3xl font-bold text-amber-800">
+            <span className="text-3xl font-bold text-[var(--accent)]">
               Ersho Events
             </span>
           </Link>
@@ -65,7 +70,7 @@ export default function SignUpPage() {
             Or{" "}
             <Link
               href="/auth/signin"
-              className="font-medium text-amber-800 hover:text-amber-700"
+              className="font-medium accent-text hover:text-[var(--accent-700)]"
             >
               sign in to your existing account
             </Link>
@@ -99,7 +104,7 @@ export default function SignUpPage() {
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-amber-500 focus:border-amber-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent-700)] focus:z-10 sm:text-sm"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -124,7 +129,7 @@ export default function SignUpPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-amber-500 focus:border-amber-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full pl-10 pr-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent-700)] focus:z-10 sm:text-sm"
                   placeholder="Enter your email"
                 />
               </div>
@@ -149,7 +154,7 @@ export default function SignUpPage() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none relative block w-full pl-10 pr-10 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-amber-500 focus:border-amber-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full pl-10 pr-10 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent-700)] focus:z-10 sm:text-sm"
                   placeholder="Enter your password"
                 />
                 <button
@@ -209,18 +214,24 @@ export default function SignUpPage() {
               name="agree-terms"
               type="checkbox"
               required
-              className="h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 rounded"
+              className="h-4 w-4 text-[var(--accent)] focus:ring-[var(--accent)] border-gray-300 rounded"
             />
             <label
               htmlFor="agree-terms"
               className="ml-2 block text-sm text-gray-900"
             >
               I agree to the{" "}
-              <a href="#" className="text-amber-800 hover:text-amber-700">
+              <a
+                href="#"
+                className="accent-text hover:text-[var(--accent-700)]"
+              >
                 Terms of Service
               </a>{" "}
               and{" "}
-              <a href="#" className="text-amber-800 hover:text-amber-700">
+              <a
+                href="#"
+                className="accent-text hover:text-[var(--accent-700)]"
+              >
                 Privacy Policy
               </a>
             </label>
@@ -230,7 +241,7 @@ export default function SignUpPage() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-amber-800 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white accent-btn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)] disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <div className="flex items-center">

@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #a58b78; /* user requested */
+  --accent-700: #8f7869;
+  --accent-200: #e9dfdb;
 }
 
 @theme inline {
@@ -28,12 +31,29 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d97706;
+  background: var(--accent);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b45309;
+  background: var(--accent-700);
+}
+
+.accent-btn {
+  background: var(--accent);
+  color: white;
+}
+
+.accent-btn:hover {
+  background: var(--accent-700);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-muted {
+  color: var(--accent-700);
 }
 
 /* Line clamp utility */

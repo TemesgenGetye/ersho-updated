@@ -35,7 +35,9 @@ export default function Header() {
                 className="object-contain p-1"
               />
             </div>
-            <span className="hidden sm:inline-block text-lg font-bold text-slate-900">Ersho Events</span>
+            <span className="hidden sm:inline-block text-lg font-bold text-slate-900">
+              Ersho Events
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -124,7 +126,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="bg-slate-800 text-white px-4 py-2 rounded-md hover:bg-slate-700 transition-colors"
+                  className="px-4 py-2 rounded-md transition-colors accent-btn hover:accent-btn"
                 >
                   Sign Up
                 </Link>
@@ -157,10 +159,16 @@ export default function Header() {
                 className="flex items-center gap-3"
                 onClick={() => setIsMenuOpen(false)}
               >
-                  <div className="w-12 h-8 relative rounded-md overflow-hidden border border-gray-200 bg-white flex items-center justify-center">
-                    <Image src="/logo.jpg" alt="logo" width={48} height={32} className="object-contain p-1" />
-                  </div>
-                  <span className="text-lg font-bold text-slate-900">Ersho</span>
+                <div className="w-12 h-8 relative rounded-md overflow-hidden border border-gray-200 bg-white flex items-center justify-center">
+                  <Image
+                    src="/logo.jpg"
+                    alt="logo"
+                    width={48}
+                    height={32}
+                    className="object-contain p-1"
+                  />
+                </div>
+                <span className="text-lg font-bold text-slate-900">Ersho</span>
               </Link>
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -250,7 +258,10 @@ export function HeaderTagline() {
   return (
     <div className="bg-white border-t border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <p className="text-sm text-slate-600 text-center">Professional event planning &amp; management — tailored to your vision.</p>
+        <p className="text-sm text-slate-600 text-center">
+          Professional event planning &amp; management — tailored to your
+          vision.
+        </p>
       </div>
     </div>
   );

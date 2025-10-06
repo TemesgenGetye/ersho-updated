@@ -111,14 +111,14 @@ export default function GallerySection() {
             Event Gallery
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Share your memories from our events. Upload your photos and they'll
-            be reviewed by our team.
+            Share your memories from our events. Upload your photos and
+            we&apos;ll be reviewed by our team.
           </p>
 
           {user && (
             <button
               onClick={() => setShowUploadModal(true)}
-              className="inline-flex items-center bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-lg font-semibold transition-colors accent-btn"
             >
               <Upload className="h-5 w-5 mr-2" />
               Upload Your Photos
@@ -177,7 +177,7 @@ export default function GallerySection() {
         <div className="text-center mt-12">
           <Link
             href="/gallery"
-            className="inline-flex items-center text-amber-800 hover:text-amber-700 font-semibold"
+            className="inline-flex items-center accent-text hover:text-[var(--accent-700)] font-semibold"
           >
             View Full Gallery
             <svg
@@ -214,7 +214,7 @@ export default function GallerySection() {
                 type="file"
                 accept="image/*"
                 onChange={handleFileSelect}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100"
+                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[var(--accent-200)] file:text-[var(--accent-700)] hover:file:bg-[rgba(233,223,219,0.95)]"
               />
             </div>
 
