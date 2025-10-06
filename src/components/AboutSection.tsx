@@ -13,8 +13,8 @@ export default function AboutSection() {
                 About Ersho Events
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Hi! I am the founder of Ersho Events. With years of experience in
-                event planning and management, I specialize in creating
+                Hi! I am the founder of Ersho Events. With years of experience
+                in event planning and management, I specialize in creating
                 unforgettable experiences that exceed your expectations.
               </p>
               <p className="text-lg text-gray-600 mb-8">
@@ -30,37 +30,58 @@ export default function AboutSection() {
                 <div className="flex items-center justify-center w-12 h-12 bg-slate-700 rounded-full mx-auto mb-3">
                   <Heart className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Passionate</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Passionate
+                </h3>
                 <p className="text-sm text-gray-600">We love what we do</p>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-slate-700 rounded-full mx-auto mb-3">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Experienced</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Experienced
+                </h3>
                 <p className="text-sm text-gray-600">Years of expertise</p>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-slate-700 rounded-full mx-auto mb-3">
                   <Award className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Award-Winning</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Award-Winning
+                </h3>
                 <p className="text-sm text-gray-600">Recognized excellence</p>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-slate-700 rounded-full mx-auto mb-3">
                   <Calendar className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Reliable</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Reliable
+                </h3>
                 <p className="text-sm text-gray-600">Always on time</p>
               </div>
             </div>
 
             <div className="pt-4">
-              <Link href="/about" className="inline-flex items-center bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors">
+              <Link
+                href="/about"
+                className="inline-flex items-center bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-700 transition-colors"
+              >
                 Learn More About Us
-                <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  className="ml-2 h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </Link>
             </div>

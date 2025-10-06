@@ -15,7 +15,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Ersho Events</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Ersho Events
+            </h3>
             <p className="text-slate-600 mb-4">
               Transforming your ideas into memorable events. We specialize in
               creating unforgettable experiences for weddings, corporate events,
@@ -45,7 +47,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-slate-900">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-slate-900">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -64,26 +68,43 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-slate-600 hover:text-slate-800 transition-colors">
+                <Link
+                  href="/gallery"
+                  className="text-slate-600 hover:text-slate-800 transition-colors"
+                >
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-slate-600 hover:text-slate-800 transition-colors">About Us</Link>
+                <Link
+                  href="/about"
+                  className="text-slate-600 hover:text-slate-800 transition-colors"
+                >
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-600 hover:text-slate-800 transition-colors">Contact</Link>
+                <Link
+                  href="/contact"
+                  className="text-slate-600 hover:text-slate-800 transition-colors"
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-slate-900">Contact Info</h4>
+            <h4 className="text-lg font-semibold mb-4 text-slate-900">
+              Contact Info
+            </h4>
             <div className="space-y-3">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 text-slate-300 mr-3" />
-                <span className="text-slate-600">123 Event Street, City, State 12345</span>
+                <span className="text-slate-600">
+                  123 Event Street, City, State 12345
+                </span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-slate-300 mr-3" />
@@ -99,10 +120,22 @@ export default function Footer() {
 
         <div className="border-t border-gray-100 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-slate-500 text-sm">© 2024 Ersho Events. All rights reserved.</p>
+            <p className="text-slate-500 text-sm">
+              © 2024 Ersho Events. All rights reserved.
+            </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-slate-500 hover:text-slate-700 text-sm transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="text-slate-500 hover:text-slate-700 text-sm transition-colors">Terms of Service</Link>
+              <Link
+                href="/privacy"
+                className="text-slate-500 hover:text-slate-700 text-sm transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="text-slate-500 hover:text-slate-700 text-sm transition-colors"
+              >
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>
