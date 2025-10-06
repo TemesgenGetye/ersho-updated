@@ -31,15 +31,15 @@ export default function Hero() {
 
 function LetterVideoMosaic() {
   const videoSources = [
-    "./vid1.mp4",
-    "./vid1.mp4",
-    "./vid1.mp4",
-    "./vid1.mp4",
-    "./vid1.mp4",
-    "./vid1.mp4",
-    "./vid1.mp4",
-    "./vid1.mp4",
-    "./vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
+    "/vid1.mp4",
   ];
 
   return (
@@ -114,12 +114,14 @@ function LetterVideoMosaic() {
 // Removed unused MediaGrid (replaced by MediaGridLarge in layout)
 
 function MediaGridLarge() {
-  const videos = ["./vid1.mp4", "./vid1.mp4"];
+  const videos = ["/vid1.mp4", "/vid1.mp4"];
   const images = [
-    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=600&fit=crop",
+    "/IMG_0335.JPG",
+    "/IMG_0390.JPG",
+    "/IMG_0392.JPG",
+    "/IMG_0458.jpg",
+    "/IMG_0526.jpg",
+    "/IMG_0484.JPG",
   ];
 
   // 4x4 dense grid; place 2 videos and 4 images with spans to create an irregular layout

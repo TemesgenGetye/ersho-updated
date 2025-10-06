@@ -24,21 +24,18 @@ export default function Header() {
     <header className="bg-white shadow-sm mt-1.5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <div className="relative">
-              {/* Neutral subtle background behind logo */}
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-200 to-slate-300 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-              <div className="relative bg-white rounded-full p-1 shadow-sm group-hover:shadow transition-shadow duration-300">
-                <Image
-                  src="/logo.jpg"
-                  alt="Ersho Events Logo"
-                  width={50}
-                  height={50}
-                  className="rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
+          {/* Logo (simplified) */}
+          <Link href="/" className="flex items-center gap-3">
+            <div className="relative w-14 h-10 flex-shrink-0 rounded-md overflow-hidden border border-gray-200 shadow-sm bg-white">
+              <Image
+                src="/logo.jpg"
+                alt="Ersho Events Logo"
+                width={56}
+                height={40}
+                className="object-contain p-1"
+              />
             </div>
+            <span className="hidden sm:inline-block text-lg font-bold text-slate-900">Ersho Events</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -81,7 +78,7 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center space-x-2 text-gray-700 hover:text-amber-800 transition-colors"
+                  className="flex items-center space-x-2 text-gray-700 hover:text-slate-800 transition-colors"
                 >
                   <User className="h-5 w-5" />
                   <span>{profile?.full_name || "User"}</span>
@@ -139,104 +136,63 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-slate-800 transition-colors"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-slate-300"
             >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-              <Link
-                href="/"
-                className="block px-3 py-2 text-gray-700 hover:text-slate-800 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/events"
-                className="block px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Events
-              </Link>
-              <Link
-                href="/gallery"
-                className="block px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Gallery
-              </Link>
-              <Link
-                href="/about"
-                className="block px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-
-              {user ? (
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="px-3 py-2 text-sm text-gray-500">
-                    {profile?.full_name || "User"}
-                  </div>
-                  <Link
-                    href="/profile"
-                    className="block px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Profile
-                  </Link>
-                  {isAdmin && (
-                    <Link
-                      href="/admin"
-                      className="block px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Admin Panel
-                    </Link>
-                  )}
-                  <button
-                    onClick={handleSignOut}
-                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                  >
-                    Sign Out
-                  </button>
+          <div className="md:hidden fixed inset-0 z-50 bg-white overflow-auto">
+            <div className="flex items-center justify-between px-4 pt-6">
+              <Link href="/" className="flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
+                <div className="w-10 h-10 relative">
+                  <Image src="/logo.jpg" alt="logo" width={40} height={40} className="rounded-full object-cover" />
                 </div>
-              ) : (
-                <div className="border-t border-gray-200 pt-4 space-y-2">
-                  <Link
-                    href="/auth/signin"
-                    className="block px-3 py-2 text-gray-700 hover:text-amber-800 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Sign In
-                  </Link>
-                  <Link
-                    href="/auth/signup"
-                    className="block px-3 py-2 bg-slate-800 text-white rounded-md hover:bg-slate-700 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Sign Up
-                  </Link>
-                </div>
-              )}
+                <span className="text-lg font-bold text-slate-900">Ersho</span>
+              </Link>
+              <button onClick={() => setIsMenuOpen(false)} aria-label="Close menu" className="p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <X className="h-6 w-6" />
+              </button>
             </div>
+
+            <nav className="mt-6 px-4 pb-8 space-y-4">
+              {[
+                ["/", "Home"],
+                ["/events", "Events"],
+                ["/gallery", "Gallery"],
+                ["/about", "About"],
+                ["/contact", "Contact"],
+              ].map(([href, label]) => (
+                <Link
+                  key={String(href)}
+                  href={String(href)}
+                  className="block px-4 py-4 text-xl font-medium text-slate-800 rounded-lg hover:bg-gray-100"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {String(label)}
+                </Link>
+              ))}
+
+              <div className="border-t border-gray-200 mt-4 pt-4 space-y-4">
+                {user ? (
+                  <>
+                    <div className="text-sm text-slate-600 px-4">{profile?.full_name || "User"}</div>
+                    <Link href="/profile" className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg" onClick={() => setIsMenuOpen(false)}>Profile</Link>
+                    {isAdmin && <Link href="/admin" className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg" onClick={() => setIsMenuOpen(false)}>Admin Panel</Link>}
+                    <button onClick={handleSignOut} className="w-full text-left px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg">Sign Out</button>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/auth/signin" className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
+                    <Link href="/auth/signup" className="block px-4 py-3 bg-slate-800 text-white rounded-lg text-center hover:bg-slate-700" onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
+                  </>
+                )}
+              </div>
+            </nav>
           </div>
         )}
       </div>
