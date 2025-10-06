@@ -26,12 +26,12 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo (simplified) */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-14 h-10 flex-shrink-0 rounded-md overflow-hidden border border-gray-200 shadow-sm bg-white">
+            <div className="relative w-16 h-12 flex-shrink-0 rounded-md overflow-hidden border border-gray-200 shadow-sm bg-white flex items-center justify-center">
               <Image
                 src="/logo.jpg"
                 alt="Ersho Events Logo"
-                width={56}
-                height={40}
+                width={64}
+                height={48}
                 className="object-contain p-1"
               />
             </div>
@@ -139,7 +139,11 @@ export default function Header() {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-slate-300"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -148,13 +152,21 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden fixed inset-0 z-50 bg-white overflow-auto">
             <div className="flex items-center justify-between px-4 pt-6">
-              <Link href="/" className="flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
-                <div className="w-10 h-10 relative">
-                  <Image src="/logo.jpg" alt="logo" width={40} height={40} className="rounded-full object-cover" />
-                </div>
-                <span className="text-lg font-bold text-slate-900">Ersho</span>
+              <Link
+                href="/"
+                className="flex items-center gap-3"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                  <div className="w-12 h-8 relative rounded-md overflow-hidden border border-gray-200 bg-white flex items-center justify-center">
+                    <Image src="/logo.jpg" alt="logo" width={48} height={32} className="object-contain p-1" />
+                  </div>
+                  <span className="text-lg font-bold text-slate-900">Ersho</span>
               </Link>
-              <button onClick={() => setIsMenuOpen(false)} aria-label="Close menu" className="p-2 rounded-md text-gray-700 hover:bg-gray-100">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+                className="p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              >
                 <X className="h-6 w-6" />
               </button>
             </div>
@@ -180,15 +192,48 @@ export default function Header() {
               <div className="border-t border-gray-200 mt-4 pt-4 space-y-4">
                 {user ? (
                   <>
-                    <div className="text-sm text-slate-600 px-4">{profile?.full_name || "User"}</div>
-                    <Link href="/profile" className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg" onClick={() => setIsMenuOpen(false)}>Profile</Link>
-                    {isAdmin && <Link href="/admin" className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg" onClick={() => setIsMenuOpen(false)}>Admin Panel</Link>}
-                    <button onClick={handleSignOut} className="w-full text-left px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg">Sign Out</button>
+                    <div className="text-sm text-slate-600 px-4">
+                      {profile?.full_name || "User"}
+                    </div>
+                    <Link
+                      href="/profile"
+                      className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Profile
+                    </Link>
+                    {isAdmin && (
+                      <Link
+                        href="/admin"
+                        className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Admin Panel
+                      </Link>
+                    )}
+                    <button
+                      onClick={handleSignOut}
+                      className="w-full text-left px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg"
+                    >
+                      Sign Out
+                    </button>
                   </>
                 ) : (
                   <>
-                    <Link href="/auth/signin" className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
-                    <Link href="/auth/signup" className="block px-4 py-3 bg-slate-800 text-white rounded-lg text-center hover:bg-slate-700" onClick={() => setIsMenuOpen(false)}>Sign Up</Link>
+                    <Link
+                      href="/auth/signin"
+                      className="block px-4 py-3 text-slate-800 hover:bg-gray-100 rounded-lg"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Sign In
+                    </Link>
+                    <Link
+                      href="/auth/signup"
+                      className="block px-4 py-3 bg-slate-800 text-white rounded-lg text-center hover:bg-slate-700"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Sign Up
+                    </Link>
                   </>
                 )}
               </div>
@@ -197,5 +242,16 @@ export default function Header() {
         )}
       </div>
     </header>
+  );
+}
+
+// Optional tagline bar under the header
+export function HeaderTagline() {
+  return (
+    <div className="bg-white border-t border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <p className="text-sm text-slate-600 text-center">Professional event planning &amp; management — tailored to your vision.</p>
+      </div>
+    </div>
   );
 }
