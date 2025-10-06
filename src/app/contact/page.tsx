@@ -71,8 +71,8 @@ export default function ContactPage() {
                   Thank You!
                 </h1>
                 <p className="text-xl text-gray-600 mb-8">
-                  Your message has been sent successfully. We'll get back to you
-                  soon!
+                  Your message has been sent successfully. We&apos;ll get back
+                  to you soon!
                 </p>
                 <Link
                   href="/"
@@ -109,8 +109,8 @@ export default function ContactPage() {
                 Contact Us
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Get in touch with us to discuss your event needs. We'd love to
-                hear from you!
+                Get in touch with us to discuss your event needs. We&apos;d love
+                to hear from you!
               </p>
             </div>
           </div>
@@ -126,9 +126,9 @@ export default function ContactPage() {
                     Get in Touch
                   </h2>
                   <p className="text-lg text-gray-600 mb-8">
-                    Ready to plan your next event? We're here to help make it
-                    unforgettable. Reach out to us and let's start creating
-                    something amazing together.
+                    Ready to plan your next event? We&apos;re here to help make
+                    it unforgettable. Reach out to us and let&apos;s start
+                    creating something amazing together.
                   </p>
                 </div>
 

@@ -124,7 +124,7 @@ export default function GalleryPage() {
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 Share your memories from our events. Upload your photos and
-                they'll be reviewed by our team.
+                we&apos;ll be reviewed by our team.
               </p>
 
               {user && (
